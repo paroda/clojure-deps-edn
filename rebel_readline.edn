@@ -1,2 +1,2 @@
-{:key-map     :viins
- :color-theme :light-screen-theme}
+{:key-map     :emacs
+ :color-theme :dark-screen-theme}
