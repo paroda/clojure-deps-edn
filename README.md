@@ -16,7 +16,7 @@ The **[Practicalli Clojure book](https://practicalli.github.io/clojure/clojure-t
 * [Updating practicalli/clojure-deps-edn](#updating-practicalli-clojure-deps-edn)
 * [Common development tasks](#common-development-tasks)
 * [Aliases](#aliases)
-    * [REPL Terminal UI](#repl-terminal-ui) | [REPL with Editor](#repl-with-editor) | [Remote REPL Connection](#remote-repl-connection) | [Alternative REPLs](#alternative-repls) | [Projects](#clojure-projects) | [Java sources](#java-sources) | [Databases](#databases-and-drivers) | [Data Inspectors](#data-inspectors) | [Middleware](#middleware) | [Clojure Spec](#clojure-specification) | [Unit Testing](#unit-testing-frameworks) | [Test runners](#test-runners-and-test-coverage-tools) | [Lint tools](#lint-tools) | [Visualize vars and deps](#visualizing-project-vars-and-library-dependencies) | [Performance testing](#performance-testing) | [Serices](#services)
+    * [REPL Terminal UI](#repl-terminal-ui) | [REPL with Editor](#repl-with-editor) | [Remote REPL Connection](#remote-repl-connection) | [Alternative REPLs](#alternative-repls) | [Projects](#clojure-projects) | [Formatting](#formatting) [Java sources](#java-sources) | [Databases](#databases-and-drivers) | [Data Inspectors](#data-inspectors) | [Middleware](#middleware) | [Clojure Spec](#clojure-specification) | [Unit Testing](#unit-testing-frameworks) | [Test runners](#test-runners-and-test-coverage-tools) | [Lint tools](#lint-tools) | [Visualize vars and deps](#visualizing-project-vars-and-library-dependencies) | [Performance testing](#performance-testing) | [Serices](#services)
 * [Library repositories](#library-repositories)
 * [Experimental](#experimental)
 
@@ -34,7 +34,7 @@ Clojure CLI tools creates a configuration directory called `.clojure`, which [by
 
 `CLJ_CONFIG` can be used to over-ride all other location settings
 
-> Check the location of your Clojure configuration directory by running `clojure -Sdescribe` and checking the `:user-config` value.
+> Check the location of your Clojure configuration directory by running `clojure -Sdescribe` and checking the `:config-user` value.
 
 
 Fork the practicalli/clojure-deps-edn repository and clone your fork to an existing `.clojure/` directory (eg. `$HOME/.clojure` or `%HOME%\.clojure`).
@@ -199,6 +199,7 @@ Create a new project (Edn command line arguments - recommended approach - except
 | `clojure -X:project/new :name practicalli/my-library`                                                   | library project with given name                      |
 | `clojure -X:project/new :template app :name practicalli/my-application`                                 | App project with given name                          |
 | `clojure -X:project/new :template luminus :name practicalli/full-stack-app :args '["+http-kit" "+h2"]'` | Luminus project with given name and template options |
+| `clojure -X:project/new :template figwheel-main :name practicalli/landing-page :args '["--reagent"]'`   | ClojureScript Figwheel-main project with reagent     |
 
 ### Running projects
 
@@ -298,6 +299,9 @@ Path to project.jar can also be set in alias to simplify the Clojure command.
 > `clojure -X:deps mvn-install project.jar` for local deployment of jars is part of the 1.10.1.697 release of the [Clojure CLI tools](https://clojure.org/guides/getting_started) in September 2020.
 
 
+## Formatting
+
+* `:format/zprint filename` - format clojure code and Edn data structures in the given file
 
 
 ## Java Sources
